@@ -1,3 +1,12 @@
+:root {
+    --light-teal: #79dfc1;
+    --medium-teal: #20c997;
+    --dark-teal: #13795b;
+    --darker-teal: #06281e;
+    --light-gray: #d6d6d6;
+}
+
 .button {
-    background-color: blueviolet;
+    background-color: var(--light-teal);
+    box-shadow: 2px 2px 2px var(--light-gray);
 }
