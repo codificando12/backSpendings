@@ -15,9 +15,10 @@ def signupaccount(request):
         return render(request, 'signupaccount.html', {'form': UserCreateForm})
     else:
         username = request.POST['username']
+        email = request.POST['email']
         password1 = request.POST['password1']
         password2 = request.POST['password2']
-        email = request.POST['email']
+        
 
         try:
           validate_email(email)
@@ -32,7 +33,7 @@ def signupaccount(request):
 
         if password1 == password2:
             try:
-                user = User.objects.create_user(username, password1, email)
+                user = User.objects.create_user(username, email, password1)
                 user.save()
                 login(request, user)
                 return redirect('groups')
@@ -50,4 +51,8 @@ def loginaccount(request):
             return render(request, 'loginaccount.html', {'form': AuthenticationForm, 'error': 'Username and password did not match'})
         else:
             login(request, user)
-            return redirect('home')	
+            return redirect('groups')
+        
+def logoutaccount(request):
+    logout(request)
+    return redirect('home')
