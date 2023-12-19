@@ -1,4 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Soy groups</h1>
+<div class="container d-flex justify-content-center text-center vh-100 bg-light  align-content-center flex-column">
+    <div class="row align-items-center m-2">
+        <div class="col-12 col-lg-6 offset-lg-3">
+            <a href="{% url 'individual' %}"><button type="button" class="button btn w-75 fw-semibold">Personal spendings</button></a>
+        </div>
+    </div>
+    <div class="row align-items-center m-2">
+        <div class="col-12 col-lg-6 offset-lg-3">
+            <a href="#"><button type="button" class="button btn w-75 fw-semibold">
+                Couple spendings</button></a>
+        </div>
+    </div>
+
+</div>
 {% endblock content %}
