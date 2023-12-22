@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1 class="text-center">Categories</h1>
+<a href="{% url 'addCategory' user_id=user_id %}"><button class="btn btn-primary">Add category</button></a>
 {% endblock content %}

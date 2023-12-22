@@ -9,3 +9,7 @@ class IndividualSpending(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     amount = models.FloatField()
     date = models.DateField()
+
+class Categories(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    categoryName = models.CharField(max_length=100)

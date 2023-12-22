@@ -18,7 +18,6 @@ def signupaccount(request):
         email = request.POST['email']
         password1 = request.POST['password1']
         password2 = request.POST['password2']
-        
 
         try:
           validate_email(email)
@@ -51,7 +50,7 @@ def loginaccount(request):
             return render(request, 'loginaccount.html', {'form': AuthenticationForm, 'error': 'Username and password did not match'})
         else:
             login(request, user)
-            return redirect('groups')
+            return redirect('groups', user_id=user.id)
         
 def logoutaccount(request):
     logout(request)
